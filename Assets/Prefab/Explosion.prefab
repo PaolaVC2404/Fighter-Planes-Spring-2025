@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 591261572054598399}
   - component: {fileID: 1039479969715957868}
-  - component: {fileID: 8467618697582772559}
   - component: {fileID: 5489046097513045939}
+  - component: {fileID: -8227229153735012698}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 493665692101bf047ba0234b472dc345, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdf6b12e04095074e9c8826d5a397e73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8467618697582772559
+--- !u!114 &5489046097513045939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886710396827344234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a02435c0aea58745b49351595fdd5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &-8227229153735012698
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -96,7 +108,7 @@ Animator:
   m_GameObject: {fileID: 1886710396827344234}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9bc0b7df6a74378419d8382e535a67eb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3328ffd5573aae340bdfc964c0690e16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,15 +119,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5489046097513045939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886710396827344234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df453bed836fdd24fa5203ac0bcec333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 54c98579765737146b657538c8361fec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b916b6fea3e367b4b9c86d627efbcd0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,11 +97,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6465214131589529892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6cd60caef9c0cb4eac00f38203cd42c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2945ce5edbf50a8498dc6af67f24e498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8568965665149658710, guid: b1eed6253aa069845b0edf3f90db799d, type: 3}
-  explosionPrefab: {fileID: 1886710396827344234, guid: e8e63456aa1d9d240ab38a0453e59388, type: 3}
+  lives: 3
+  bulletPrefab: {fileID: 8568965665149658710, guid: 804e15c04e8f54541b4a61b44f4e5508, type: 3}
+  explosionPrefab: {fileID: 1886710396827344234, guid: 120218844d4428c448d583cbd05841c1, type: 3}
 --- !u!82 &-8757797614237147667
 AudioSource:
   m_ObjectHideFlags: 0

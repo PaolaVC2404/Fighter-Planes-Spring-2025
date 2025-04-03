@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,8 +8,6 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
-
-    public TextMeshProUGUI livesText;
 
     public float horizontalScreenSize;
     public float verticalScreenSize;
@@ -51,10 +47,5 @@ public class GameManager : MonoBehaviour
     public void AddScore(int earnedScore)
     {
         score = score + earnedScore;
-    }
-
-    public void ChangeLivesText (int currentLives)
-    {
-        livesText.text = "Lives: " + currentLives;
     }
 }

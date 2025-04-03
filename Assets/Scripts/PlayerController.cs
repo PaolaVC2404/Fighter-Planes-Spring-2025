@@ -20,9 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        lives = 3;
         speed = 5.0f;
-        gameManager.ChangeLivesText(lives);
     }
 
     // Update is called once per frame
@@ -30,19 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         Shooting();
-    }
-
-    public void LoseALife()
-    {
-        //lives = lives - 1;
-        //lives -= 1;
-        lives--;
-        gameManager.ChangeLivesText(lives);
-        if (lives == 0)
-        {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-        }
     }
 
     void Shooting()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject explosionPrefab;
+    public GameObject coinPrefab;
    
 
     // Start is called before the first frame update
@@ -34,6 +36,18 @@ public class PlayerController : MonoBehaviour
         Shooting();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup"))
+        {
+            // Increase the score by 1
+            gameManager.AddScore(1);
+            UnityEngine.Debug.Log("Player collided with coin!");
+            // Destroy the coin after it is collected
+            Destroy(other.gameObject);
+        }
+    }
+
     public void LoseALife()
     {
         //lives = lives -1;
@@ -48,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
         void Shooting()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         }

@@ -148,14 +148,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 194126353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576f0140c3454b542aff349792ca1de2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6dc590578b6538243ba4d45d253c2898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 6465214131589529892, guid: d6a60dd56c43c0e449fd6ea4aaa253b6, type: 3}
-  enemyOnePrefab: {fileID: 8729755512266785908, guid: c675d688118d62d419553a315bd6fe3d, type: 3}
-  cloudPrefab: {fileID: 8901978872678414076, guid: 81d3bfbb9babbdd4a89bba3c01334b85, type: 3}
-  coinPrefab: {fileID: 1708361887439229454, guid: 1b67a0738780799409b54496266ece18, type: 3}
-  playerController: {fileID: 0}
+  playerPrefab: {fileID: 6465214131589529892, guid: 7cbbc0ca70679714c949758f4f9e4661, type: 3}
+  enemyOnePrefab: {fileID: 8729755512266785908, guid: 2405e49fc9408e641a14ca2d9675397f, type: 3}
+  cloudPrefab: {fileID: 8901978872678414076, guid: 5fc0370b13c932f4090103ffc14f0d2d, type: 3}
+  coinPrefab: {fileID: 1708361887439229454, guid: 961946a1c652f5e4b9483e4a7137568a, type: 3}
+  playerController: {fileID: 2588361026742261577, guid: 7cbbc0ca70679714c949758f4f9e4661, type: 3}
   livesText: {fileID: 595947709}
   scoreText: {fileID: 296394954}
   horizontalScreenSize: 0
@@ -235,8 +235,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f314c0845e320cb43a6341e123a09924, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: f314c0845e320cb43a6341e123a09924, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bed34b64d07be514486f8c2625a2767f, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: bed34b64d07be514486f8c2625a2767f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -321,8 +321,9 @@ GameObject:
   - component: {fileID: 595947708}
   - component: {fileID: 595947710}
   - component: {fileID: 595947709}
+  - component: {fileID: 595947711}
   m_Layer: 5
-  m_Name: Lives
+  m_Name: LivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,8 +370,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lives: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f314c0845e320cb43a6341e123a09924, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: f314c0845e320cb43a6341e123a09924, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bed34b64d07be514486f8c2625a2767f, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: bed34b64d07be514486f8c2625a2767f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -444,6 +445,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595947707}
   m_CullTransparentMesh: 1
+--- !u!114 &595947711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595947707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c877b8d6ce4a5449cbfb171487ec46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LivesText: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,28 +38,45 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Powerup"))
+        if
+            (other.CompareTag("Powerup"))
         {
             // Increase the score by 1
             gameManager.AddScore(1);
-            UnityEngine.Debug.Log("Player collided with coin!");
-            // Destroy the coin after it is collected
-            Destroy(other.gameObject);
-        }
-    }
 
-    public void LoseALife()
+            UnityEngine.Debug.Log("Player collided with coin!");
+
+            // Destroy the coin after it is collected
+
+            Destroy(other.gameObject);
+
+        }
+                if(other.CompareTag("EnemyOne"))
+               
+                {
+                    LoseALife();
+                }
+           
+            }
+            
+
+
+            private void LoseALife()
     {
         //lives = lives -1;
         //lives - = 1;
         lives--;
-        gameManager.ChangeLivesText(lives);
+        GameObject livesTextObject = GameObject.Find("LivesText");
+        LivesDisplay livesDisplayScript = livesTextObject.GetComponent<LivesDisplay>();
+        livesDisplayScript.UpdateLivesText();
+
         if (lives == 0)
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
-    }
+     }
+
         void Shooting()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -86,6 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
         }
+
 
     }
 

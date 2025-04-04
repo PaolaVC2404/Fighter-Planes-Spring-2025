@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 
-    public int lives;
-    private float speed;
+    public int lives= 3;
+    private float speed= 5.0f;
 
     private GameManager gameManager;
 
@@ -15,12 +16,15 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject explosionPrefab;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        lives = 3;
         speed = 5.0f;
+        gameManager.ChangeLivesText(lives);
     }
 
     // Update is called once per frame
@@ -30,7 +34,19 @@ public class PlayerController : MonoBehaviour
         Shooting();
     }
 
-    void Shooting()
+    public void LoseALife()
+    {
+        //lives = lives -1;
+        //lives - = 1;
+        lives--;
+        gameManager.ChangeLivesText(lives);
+        if (lives == 0)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+    }
+        void Shooting()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -58,4 +74,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-}
+
+ }

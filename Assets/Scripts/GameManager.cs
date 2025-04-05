@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
     public GameObject coinPrefab;
+    public GameObject healthPrefab;
 
     public PlayerController playerController;
 
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         CreateSky();
         InvokeRepeating("CreateEnemy", 1, 3);
         InvokeRepeating("CreateCoin", 1, 5);
+        InvokeRepeating("CreateHealth", 1, 7);
         
     }
 
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
         Instantiate(coinPrefab, coinPosition, Quaternion.Euler(0, 0, 0));
     }
 
-        void CreateEnemy()
+    void CreateEnemy()
     {
         Instantiate(enemyOnePrefab, new Vector3(UnityEngine.Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
     }
@@ -59,8 +61,15 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(cloudPrefab, new Vector3(UnityEngine.Random.Range(-horizontalScreenSize, horizontalScreenSize), UnityEngine.Random.Range(-verticalScreenSize, verticalScreenSize), 0), Quaternion.identity);
         }
-        
+ 
     }
+
+    void CreateHealth()
+    {
+        Vector3 healthPosition = new Vector3(UnityEngine.Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0);
+        Instantiate(healthPrefab, healthPosition, Quaternion.Euler(0, 0, 0));
+    }
+
     public void AddScore(int earnedScore)
     {
         score = score + earnedScore;

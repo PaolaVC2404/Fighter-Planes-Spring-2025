@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b916b6fea3e367b4b9c86d627efbcd0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e67ae804160e61541b5491e41692bf9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,13 +97,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6465214131589529892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2945ce5edbf50a8498dc6af67f24e498, type: 3}
+  m_Script: {fileID: 11500000, guid: d742d67f68e116043b686f51ea527ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
-  bulletPrefab: {fileID: 8568965665149658710, guid: 804e15c04e8f54541b4a61b44f4e5508, type: 3}
-  explosionPrefab: {fileID: 1886710396827344234, guid: 120218844d4428c448d583cbd05841c1, type: 3}
-  coinPrefab: {fileID: 1708361887439229454, guid: 1b67a0738780799409b54496266ece18, type: 3}
+  bulletPrefab: {fileID: 8568965665149658710, guid: 55f966f2e35c1e54e8d5c6dc570afd4b, type: 3}
+  explosionPrefab: {fileID: 1886710396827344234, guid: f341611f585c8f248a41fc372611b1a1, type: 3}
+  coinPrefab: {fileID: 1708361887439229454, guid: 961946a1c652f5e4b9483e4a7137568a, type: 3}
 --- !u!82 &-8757797614237147667
 AudioSource:
   m_ObjectHideFlags: 0

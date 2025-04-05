@@ -6,6 +6,10 @@ public class Coin : MonoBehaviour
 {
     private GameManager gameManager;
     public int score = 0;
+    public float speed = 0.5f;
+    public float amplitude = 8.0f;
+
+    private float initialX;
 
     // Start is called before the first frame update
     void Start()
@@ -13,12 +17,14 @@ public class Coin : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gameManager.ChangeScoreText(score);
         StartCoroutine(DestroyCoinAfterDelay(2.5f));
+        initialX = transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        float newX = initialX + Mathf.Sin(Time.time * speed) * amplitude;
+        transform.position = new Vector3(newX, transform.position.y, transform.position.z);
     }
 
     private IEnumerator DestroyCoinAfterDelay(float delay)
@@ -27,20 +33,17 @@ public class Coin : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Destroy the coin after the delay
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
     // Player collides with the coin
-    private void OnTriggerEnter(Collider whatDidIHit)
+    private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
-        // Check if the object that collided is the player
-        if (whatDidIHit.CompareTag("Player")) // Use CompareTag for better performance
+        if (whatDidIHit.tag == "Player")
         {
-            // Increase the score by 1
+            whatDidIHit.GetComponent<PlayerController>();
+            Destroy(this.gameObject);
             gameManager.AddScore(1);
-
-            // Destroy the coin after it's collected
-            Destroy(gameObject);
         }
     }
 }

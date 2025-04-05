@@ -41,19 +41,16 @@ public class GameManager : MonoBehaviour
     {
         ChangeScoreText(score);
     }
-    
+
     void CreateCoin()
     {
-        Instantiate(coinPrefab, new Vector3(
-             UnityEngine.Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f,
-             UnityEngine.Random.Range(-verticalScreenSize, verticalScreenSize) * 0.3f,
-             0), Quaternion.identity);
+        Vector3 coinPosition = new Vector3(UnityEngine.Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0);
+        Instantiate(coinPrefab, coinPosition, Quaternion.Euler(0, 0, 0));
     }
 
-    void CreateEnemy()
+        void CreateEnemy()
     {
-        Instantiate(enemyOnePrefab, new Vector3(UnityEngine.Random.Range(-
-            horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
+        Instantiate(enemyOnePrefab, new Vector3(UnityEngine.Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
     }
 
     void CreateSky()

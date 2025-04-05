@@ -28,12 +28,14 @@ public class Enemy : MonoBehaviour
             whatDidIHit.GetComponent<PlayerController>();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-        } else if(whatDidIHit.tag == "Weapons")
+        } 
+        
+        else if(whatDidIHit.tag == "Weapons")
         {
             Destroy(whatDidIHit.gameObject);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            gameManager.AddScore(5);
             Destroy(this.gameObject);
+            gameManager.AddScore(5);
         }
     }
 }

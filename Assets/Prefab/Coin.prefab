@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6545620935623536441}
   - component: {fileID: 1604477678050274191}
   - component: {fileID: -1421541564548943511}
+  - component: {fileID: -5776990708290195204}
+  - component: {fileID: 3820348602874026820}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Powerup
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 132cfca1b879a374f9ca395aec79d627, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ee6c6b07356bf941ae2562085ecefd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,7 +132,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708361887439229454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f73f79c82def09b43a8921ff3743ce3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e791381cb062264a8a0a31607b5595b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  speed: 0.5
+  amplitude: 8
+--- !u!50 &-5776990708290195204
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708361887439229454}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3820348602874026820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708361887439229454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b919f494e15ddc047a2c375f701780eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goingUp: 0
+  speed: 2

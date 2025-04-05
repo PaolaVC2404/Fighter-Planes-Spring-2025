@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7eeb825cbbd12184f9a34b5b1af0901d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e67ae804160e61541b5491e41692bf9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,12 +97,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6465214131589529892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc5759946ac11242b0a21002a06cba7, type: 3}
+  m_Script: {fileID: 11500000, guid: d742d67f68e116043b686f51ea527ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 0
-  bulletPrefab: {fileID: 8568965665149658710, guid: e154328441cb90b4493ed1928c8e3c18, type: 3}
-  explosionPrefab: {fileID: 1886710396827344234, guid: 4d32a2dcda960374f8fbbe2e4ea23665, type: 3}
+  lives: 3
+  bulletPrefab: {fileID: 8568965665149658710, guid: 55f966f2e35c1e54e8d5c6dc570afd4b, type: 3}
+  explosionPrefab: {fileID: 1886710396827344234, guid: f341611f585c8f248a41fc372611b1a1, type: 3}
+  coinPrefab: {fileID: 1708361887439229454, guid: 961946a1c652f5e4b9483e4a7137568a, type: 3}
 --- !u!82 &-8757797614237147667
 AudioSource:
   m_ObjectHideFlags: 0
@@ -113,7 +114,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7ce99727ee21c0a458263191fd3a140a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c0ab9542af7bd34b9999d4be94aaa18, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1

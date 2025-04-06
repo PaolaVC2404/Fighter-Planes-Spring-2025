@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float speed = 5.0f;
 
     private GameManager gameManager;
+    public GameManager explodePlayer;
 
     private float horizontalInput;
     private float verticalInput;
@@ -59,12 +60,22 @@ public class PlayerController : MonoBehaviour
         
 
     }
-    
+
+
+    public void ExplodePlayer()
+    {
+        if (lives == 0)
+        {
+            UnityEngine.Debug.Log("Instantiating explosion prefab...");
+            Destroy(GameObject.Find("Player"));
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+    }
 
 
 
-
-        void Shooting()
+    void Shooting()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject cloudPrefab;
     public GameObject coinPrefab;
     public GameObject healthPrefab;
+    public GameObject explosionPrefab;  
 
-    public PlayerController playerController;
 
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
@@ -87,25 +87,39 @@ public class GameManager : MonoBehaviour
     public void ChangeScoreText(int currentScore)
     {
         scoreText.text = "Score: " + currentScore;
+   
+    }
+
+    public void ChangeLivesText(int currentLives)
+    {
+        livesText.text = "Lives: " + currentLives;
+        
+    }
+
+    public void AddLife(int addedLives)
+    {
+        lives = Mathf.Min(lives + addedLives, 3);
+        livesText.text = "Lives: " + lives;
+
     }
 
     public void LoseLife(int lostLives)
     {
         lives = Mathf.Max(lives-lostLives, 0);
-        livesText.text = "Lives:" + lives;
+        livesText.text = "Lives: " + lives;
 
-        if (lives==0)
+        if (lives == 0)
         {
             Debug.Log("Exploding player...");
             ExplodePlayer();
         }
 
     }
-    private void ExplodePlayer()
+    public void ExplodePlayer()
     {
         Debug.Log("Instantiating explosion prefab...");
         //instantiate the player explosion prefab
-        Instantiate(playerExplosionPrefab, GameObject.Find("Player").transform.position, Quaternion.identity);
+        Instantiate(explosionPrefab, GameObject.Find("Player").transform.position, Quaternion.identity);
         //Destroy the player game object
         Destroy(GameObject.Find("Player"));
     }

@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gameManager.ChangeScoreText(score);
+        gameManager.AddScore(score);
         StartCoroutine(DestroyHealthAfterDelay(2.5f));
         initialX = transform.position.x;
     }
@@ -42,6 +42,15 @@ public class Health : MonoBehaviour
         {
             whatDidIHit.GetComponent<PlayerController>();
             Destroy(this.gameObject);
+            gameManager.AddLife(1);
+            if (gameManager.lives < 3)
+            {
+                gameManager.AddLife(1);
+            }
+            else
+            {
+                gameManager.AddScore(1);
+            }
         }
     }
 }

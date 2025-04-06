@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
 {
 
     public GameObject explosionPrefab;
-    
-    private GameManager gameManager;
+
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -18,24 +18,42 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
-        if(whatDidIHit.tag == "Player")
+        if (whatDidIHit.tag == "Player")
         {
             whatDidIHit.GetComponent<PlayerController>();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-        } 
-        
-        else if(whatDidIHit.tag == "Weapons")
+        }
+
+        else if (whatDidIHit.tag == "Weapons")
         {
             Destroy(whatDidIHit.gameObject);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             gameManager.AddScore(5);
         }
+
+
+
+
+        if (whatDidIHit.tag == "Player")
+        {
+            gameManager.LoseLife(1);
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+        else if (whatDidIHit.tag == "Weapons")
+        {
+            Destroy(whatDidIHit.gameObject);
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            gameManager.AddScore(5);
+        }
+
     }
 }

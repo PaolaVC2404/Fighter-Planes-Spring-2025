@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +25,11 @@ public class GameManager : MonoBehaviour
     public float verticalScreenSize;
 
     public int score;
+    public int lives = 3;
+
+    public GameObject playerExplosionPrefab;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +42,14 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("CreateEnemy", 1, 3);
         InvokeRepeating("CreateCoin", 1, 5);
         InvokeRepeating("CreateHealth", 1, 7);
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         ChangeScoreText(score);
+
     }
 
     void CreateCoin()
@@ -61,7 +69,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(cloudPrefab, new Vector3(UnityEngine.Random.Range(-horizontalScreenSize, horizontalScreenSize), UnityEngine.Random.Range(-verticalScreenSize, verticalScreenSize), 0), Quaternion.identity);
         }
- 
+
     }
 
     void CreateHealth()
@@ -81,8 +89,26 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + currentScore;
     }
 
-    public void ChangeLivesText (int currentLives)
+    public void LoseLife(int lostLives)
     {
-        livesText.text = "Lives: " + currentLives;
+        lives = Mathf.Max(lives-lostLives, 0);
+        livesText.text = "Lives:" + lives;
+
+        if (lives==0)
+        {
+            Debug.Log("Exploding player...");
+            ExplodePlayer();
+        }
+
     }
+    private void ExplodePlayer()
+    {
+        Debug.Log("Instantiating explosion prefab...");
+        //instantiate the player explosion prefab
+        Instantiate(playerExplosionPrefab, GameObject.Find("Player").transform.position, Quaternion.identity);
+        //Destroy the player game object
+        Destroy(GameObject.Find("Player"));
+    }
+
+
 }

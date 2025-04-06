@@ -13,7 +13,7 @@ Week 13 Completion:
 
 Week 13 Completion:
   Mahtahc 
-- etc
-- 
-- 
-
+- Created the health prefab and script.
+- Altered the health and coins movement to add diversity (coin goes side to side and health spawns and moves slower).
+- Fixed issues with the player not colliding with the coin and not adding one to the score.
+- Edited game manager script accordingly.
